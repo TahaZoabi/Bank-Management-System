@@ -13,6 +13,24 @@ public abstract class Account {
 
     }
 
+    public String roundTwoDecimal(double money) {
+        return String.format("$%.2f", money);
+    }
+    
+
+    public void depositBalance(double amount) {
+        this.balance += amount;
+        System.out.format(roundTwoDecimal(amount) + " has been successfully deposited into your bank account");
+    }
+
+    public void withdrawBalance(double amount) throws Exception {
+        if (amount > this.balance) {
+            throw new Exception("\"Withdrawal Error: Your current balance is " + roundTwoDecimal(this.balance) + ". You are attempting to withdraw " + roundTwoDecimal(amount) + ", which exceeds your available balance. Please enter a smaller amount or check your account balance.\"");
+        }
+        this.balance -= amount;
+        System.out.println(roundTwoDecimal(amount) + " has been successfully withdrawn from your bank account");
+    }
+
     public String getAccountHolderName() {
         return accountHolderName;
     }
