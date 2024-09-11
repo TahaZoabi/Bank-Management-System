@@ -1,14 +1,13 @@
 public class CheckingAccount extends Account {
-    private double overdraftLimit;
+    private double overdraftLimit = 500;
 
-    public CheckingAccount(String accountHolderName, double balance, int accountNumber, double overdraftLimit) {
-        super(accountHolderName, balance, accountNumber);
-        this.overdraftLimit = overdraftLimit;
+    public CheckingAccount(int accountID, double balance) {
+        super(accountID, balance);
+
     }
 
-    public CheckingAccount(double overdraftLimit) {
-        super();
-        this.overdraftLimit = overdraftLimit;
+    public CheckingAccount(int accountID) {
+        this(accountID, 0);
     }
 
 
@@ -18,13 +17,12 @@ public class CheckingAccount extends Account {
             if (this.balance - amount < -this.overdraftLimit) {
                 throw new Exception("Withdrawal amount exceeds the overdraft limit.");
             }
-            this.balance -= amount;
-            System.out.println(roundTwoDecimal(amount) + " has been successfully withdrawn from your bank account");
+            super.withdrawBalance(amount);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-    
+
     public double getOverdraftLimit() {
         return overdraftLimit;
     }

@@ -1,16 +1,15 @@
 public abstract class Account {
-    protected String accountHolderName;
-    protected double balance;
-    protected int accountNumber;
 
-    public Account(String accountHolderName, double balance, int accountNumber) {
-        this.accountHolderName = accountHolderName;
+    protected double balance;
+    protected int accountID;
+
+    public Account(int accountID, double balance) {
+        this.accountID = accountID;
         this.balance = balance;
-        this.accountNumber = accountNumber;
     }
 
-    public Account() {
-
+    public Account(int accountID) {
+        this(accountID, 0);
     }
 
     protected String roundTwoDecimal(double money) {
@@ -38,13 +37,6 @@ public abstract class Account {
         }
     }
 
-    public String getAccountHolderName() {
-        return accountHolderName;
-    }
-
-    public void setAccountHolderName(String accountHolderName) {
-        this.accountHolderName = accountHolderName;
-    }
 
     public double getBalance() {
         return balance;
@@ -54,11 +46,11 @@ public abstract class Account {
         this.balance = balance;
     }
 
-    public int getAccountNumber() {
-        return accountNumber;
+    public int getAccountID() {
+        return accountID;
     }
 
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAccountNumber() {
+        this.accountID += 1;
     }
 }

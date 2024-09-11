@@ -2,12 +2,11 @@ import java.util.List;
 
 public class Customer {
     private String name;
-    private int customerID;
+
     private List<Account> accountsList;
 
-    public Customer(String name, int customerID) {
+    public Customer(String name) {
         this.name = name;
-        this.customerID = customerID;
     }
 
     public void addAccount(Account account) {
@@ -26,11 +25,5 @@ public class Customer {
         this.name = name;
     }
 
-    public int getCustomerID() {
-        return customerID;
-    }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
 }
