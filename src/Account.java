@@ -13,7 +13,7 @@ public abstract class Account {
 
     }
 
-    private String roundTwoDecimal(double money) {
+    protected String roundTwoDecimal(double money) {
         return String.format("$%.2f", money);
     }
 
@@ -37,6 +37,8 @@ public abstract class Account {
             System.out.println(e.getMessage());
         }
     }
+
+    public abstract void applyInterest();
 
     public String getAccountHolderName() {
         return accountHolderName;

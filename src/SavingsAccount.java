@@ -11,11 +11,11 @@ public class SavingsAccount extends Account {
         this.interestRate = interestRate;
     }
 
-    public double getInterestRate() {
-        return interestRate;
+
+    @Override
+    public void applyInterest() {
+        double interestAmount = this.balance * (this.interestRate / 100);
+        this.balance += interestAmount;
     }
 
-    public void setInterestRate(double interestRate) {
-        this.interestRate = interestRate;
-    }
 }
