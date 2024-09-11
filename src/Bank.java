@@ -6,23 +6,10 @@ public class Bank {
     private List<Customer> customerList;
 
 
-    public <T extends Account> T createAccount(AccountType type) {
-        switch (type) {
-            case SAVINGS_ACCOUNT:
-                return (T) createSavingsAccount();
-            case CHECKING_ACCOUNT:
-                return (T) createCheckingAccount();
-            default:
-                throw new IllegalArgumentException("Unsupported account type");
+    public Account createAccount(AccountType type) {
+        if (type == AccountType.SAVINGS_ACCOUNT) {
+            return new SavingsAccount(3);
         }
-    }
-
-    public SavingsAccount createSavingsAccount() {
-        return new SavingsAccount(3);
-
-    }
-
-    public CheckingAccount createCheckingAccount() {
         return new CheckingAccount(500);
     }
 
