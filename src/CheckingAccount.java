@@ -24,10 +24,7 @@ public class CheckingAccount extends Account {
             System.out.println(e.getMessage());
         }
     }
-
-    public void applyInterest() {
-    } // no use for this
-
+    
     public double getOverdraftLimit() {
         return overdraftLimit;
     }

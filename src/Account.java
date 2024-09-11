@@ -38,8 +38,6 @@ public abstract class Account {
         }
     }
 
-    public abstract void applyInterest();
-
     public String getAccountHolderName() {
         return accountHolderName;
     }

@@ -18,12 +18,6 @@ public class Main {
         accountOne.checkBalance();
         accountOne.applyInterest();
 
-
-//        SavingsAccount ac = new SavingsAccount(3);
-//        ac.depositBalance(500);
-//        ac.applyInterest();
-//        ac.checkBalance();
-
     }
 
 
