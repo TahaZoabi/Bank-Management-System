@@ -1,14 +1,16 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        String test = roundTwoDecimal(14.5047);
-        System.out.println(test + " heheh");
+        Bank bank = new Bank("Vertex Bank");
+        Account accountOne = bank.createAccount(AccountType.SAVINGS_ACCOUNT);
+        Account accountTwo = bank.createAccount(AccountType.CHECKING_ACCOUNT);
 
-        // String.format("%.2f", amount)
+        System.out.println(accountOne.getBalance());
+        accountOne.depositBalance(15);
+        accountOne.checkBalance();
+        accountOne.withdrawBalance(17);
+
     }
 
-    public static String roundTwoDecimal(double money) {
-        return String.format("$%.2f", money);
-    }
 
 }
