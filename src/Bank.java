@@ -6,12 +6,12 @@ public class Bank {
     private List<Customer> customerList;
 
 
-    public void createAccount(Customer customer, AccountType type) {
-        Account newAccount = null;
+    public Account createAccount(Customer customer, AccountType type) {
+
         if (type.equals(AccountType.SAVINGS_ACCOUNT)) {
-            newAccount = new SavingsAccount(0);
+            return new SavingsAccount(0);
         }
-        newAccount = new CheckingAccount(1);
+        return new CheckingAccount(1);
     }
 
 
