@@ -11,7 +11,6 @@ public class SavingsAccount extends Account {
     }
 
 
-    @Override
     public void applyInterest() {
         double interestAmount = this.balance * (this.interestRate / 100);
         this.balance += interestAmount;
