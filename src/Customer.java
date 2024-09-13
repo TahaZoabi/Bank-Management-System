@@ -1,20 +1,14 @@
-import java.util.List;
-
 public class Customer {
     private String name;
+    private int accountNumber;
 
-    private List<Account> accountsList;
+    public Customer(String name, int accountNumber) {
+        this.name = name;
+        this.accountNumber = accountNumber;
+    }
 
     public Customer(String name) {
-        this.name = name;
-    }
-
-    public void addAccount(Account account) {
-        accountsList.add(account);
-    }
-
-    public void removeAccount(Account account) {
-        accountsList.remove(account);
+        this(name, -1);
     }
 
     public String getName() {
@@ -25,5 +19,11 @@ public class Customer {
         this.name = name;
     }
 
+    public int getAccountNumber() {
+        return accountNumber;
+    }
 
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 }
